@@ -77,7 +77,8 @@ class TodoController extends Controller
         $this->todo->fill($input)->save();
         //dd(DB::getQueryLog());
         //redirect()->to()の引数にtodoを指定することでhttp://127.0.0.1:8000/todoへ遷移する
-        return redirect()->to('todo');
+        //return redirect()->to('todo');
+        return redirect()->route('todo.index');
     }
 
     /**
@@ -129,7 +130,8 @@ class TodoController extends Controller
         $this->todo->find($id)->fill($input)->save();
         //dd(DB::getQueryLog());
         //ルーティングがtodoの一覧表示画面を表示する
-        return redirect()->to('todo');
+        //return redirect()->to('todo');
+        return redirect()->route('todo.index');
     }
 
     /**
@@ -146,6 +148,7 @@ class TodoController extends Controller
         //delete()で上記レコードをDBから削除する
         $this->todo->find($id)->delete();
         //ルーティングがtodoの一覧表示画面を表示する
-        return redirect()->to('todo');
+        //return redirect()->to('todo');
+        return redirect()->route('todo.index');
     }
 }
