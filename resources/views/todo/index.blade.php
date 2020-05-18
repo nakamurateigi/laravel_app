@@ -8,6 +8,7 @@
 <table class="table">
   <thead class="thead-light">
     <tr>
+      <th>ID</th>
       <th>やること</th>
       <th>作成日時</th>
       <th>更新日時</th>
@@ -20,6 +21,7 @@
     <!-- 下記のは{ { } }は< ?= ?>と同様にphpの記述ができ値の出力を行う -->
     @foreach ($todos as $todo)
       <tr><!-- TodoController -->
+        <td class="align-middle">{{ $todo->id }}</td><!-- $todoのidカラムを出力する -->
         <td class="align-middle">{{ $todo->title }}</td><!-- $todoのtitleカラムを出力する -->
         <td class="align-middle">{{ $todo->created_at }}</td><!-- $todoのcreated_atカラムを出力する -->
         <td class="align-middle">{{ $todo->updated_at }}</td><!-- $todoのupdated_atカラムを出力する -->
