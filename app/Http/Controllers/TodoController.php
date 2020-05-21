@@ -38,11 +38,13 @@ class TodoController extends Controller
         //Auth::id()で現在認証されているユーザのIDを取得
         //getByUserIdメソッドの引数に指定して、認証中のユーザのIDに合致するデータのみを取得する
         $todos = $this->todo->getByUserId(Auth::id());
+        //Auth::user()で現在認証されているユーザの取得
+        $user = Auth::user();
         /*
-        views/todo/index.blade.phpを表示し、$todosの値を渡す
+        views/todo/index.blade.phpを表示し、$todos,$userの値を渡す
         compactメソッドで$todosを連想配列としてindex.blade.phpへ渡す
         */
-        return view('todo.index', compact('todos'));
+        return view('todo.index', compact('todos','user'));
     }
 
     /**
