@@ -3,10 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 //Modelクラスを継承することでDBを操作するメソッドをTodoクラスから使用することができる
 class Todo extends Model
 {
+    use SoftDeletes;//ソフトデリートを使用するため
+
     //予期せぬ代入を防ぐため$fillabelでsaveメソッド等で代入を許可するカラムを指定する
     protected $fillable = [
         'title',//titleカラムは代入可能

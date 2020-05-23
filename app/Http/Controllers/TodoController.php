@@ -148,7 +148,7 @@ class TodoController extends Controller
     {
         //$this->todo->find($id)で$idに合致するレコードを取得する
         //delete()で上記レコードをDBから削除する
-        $this->todo->find($id)->delete();
+        $this->todo->find($id)->delete();//論理削除になる
         //ルーティングがtodoの一覧表示画面を表示する
         //return redirect()->to('todo');
         return redirect()->route('todo.index');
