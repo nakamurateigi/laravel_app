@@ -26,7 +26,7 @@ class AddDeletedAtToTodosTable extends Migration
     public function down()
     {
         Schema::table('todos', function (Blueprint $table) {
-            //
+            $table->dropColumn('deleted_at');//deleted_atカラムを削除する
         });
     }
 }
